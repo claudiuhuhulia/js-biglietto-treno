@@ -11,14 +11,16 @@ console.log('JS-OK')
 const price = document.getElementById('price');
 console.log(price);
 
-const km=prompt('Inserisci i km che intendi percorrere', 15);
+
+const km=parseInt(prompt('Inserisci i km che intendi percorrere', 15));
 console.log(km);
 
-const age=prompt('Inserisci la tua età', 25);
+const age=parseInt(prompt('Inserisci la tua età', 25));
 console.log(age);
 
 let travelprice=km * 0.21;
 console.log(travelprice);
+let travelpricefull= km * 0.21;
 
 if(age < 18){
     travelprice=travelprice * 80 / 100
@@ -30,4 +32,17 @@ console.log(travelprice)
 }
 console.log(travelprice)
 
-price.innerText= travelprice + "€";
+
+price.innerText= travelprice.toFixed(1) + "0€";
+
+
+const agedom= document.getElementById('age');
+const kmdom= document.getElementById('km');
+const fullprice=document.getElementById('int');
+
+console.log(kmdom);
+console.log(agedom);
+
+agedom.innerText = age;
+kmdom.innerText= km + 'km';
+fullprice.innerText=travelpricefull.toFixed(1) + "0€";
